@@ -8,21 +8,21 @@
 
 <form method="POST" action="?/login">
 
-  {#if form?.missing}<p class="error">The email field is required</p>{/if}
+  {#if form?.credentials}<p class="error">The username & password field is required</p>{/if}
 
   <label>
-    Email
-    <input name="email" type="email">
+    Username
+    <input name="username" type="text" required>
   </label>
   <label>
     Password
-    <input name="password" type="password">
+    <input name="password" type="password" required>
   </label>
   <button>Log in</button>
 </form>
 
 {#if form?.success}
-  <p>Successfully logged in! Welcome back, {form?.email}</p>
+  <p>Successfully logged in! Welcome back</p>
   <form method="POST" action="?/logout">
     <button>logout</button>
   </form>
